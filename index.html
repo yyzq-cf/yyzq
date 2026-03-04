@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有云转晴 - 个人主页</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 亮色主题 */
+        body.light-mode {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+        }
+        
+        .light-mode .name {
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .light-mode body::before {
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(88, 86, 214, 0.08) 0%, transparent 50%);
+        }
+        
+        .light-mode .intro,
+        .light-mode .contact,
+        .light-mode .hero-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .intro-content,
+        .light-mode .hero-card-content {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        .light-mode .social-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .footer {
+            color: #86868b;
+        }
+        
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 滚动公告 -->
+    <div class="announcement">
+        <span class="announcement-label">📢 公告：</span>
+        <div class="announcement-content">
+            <span>欢迎访问我的个人主页！VPS推荐页面已上线，RackNerd新年优惠低至$11.29/年！</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">有云转晴</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">🏠 主页</a></li>
+                <li><a href="about.html" class="nav-link">👤 关于</a></li>
+                <li><a href="vps.html" class="nav-link">🖥️ VPS</a></li>
+                <li><a href="social.html" class="nav-link">📱 社交</a></li>
+                <li><a href="contact.html" class="nav-link">📬 联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" id="themeToggle" title="切换明暗主题">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
+    <div class="container">
+        <!-- 头部区域 -->
+        <header class="header">
+            <div class="avatar">
+                <img src="avatar.png" alt="头像" id="avatar-img">
+            </div>
+            <h1 class="name">有云转晴</h1>
+            <p class="bio">大家好！热爱技术，喜欢折腾</p>
+            <p class="desc">云计算 | 数码科技 | Linux服务器 | 开源项目 | AI工具</p>
+            <p class="website">🌐 www.ywsj365.com</p>
+        </header>
+
+        <!-- 快速导航卡片 -->
+        <section class="quick-links">
+            <a href="about.html" class="quick-card">
+                <i class="fa-solid fa-user"></i>
+                <span>了解更多</span>
+            </a>
+            <a href="social.html" class="quick-card">
+                <i class="fa-solid fa-share-nodes"></i>
+                <span>关注我</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+                <i class="fa-solid fa-comments"></i>
+                <span>联系我</span>
+            </a>
+        </section>
+
+        <!-- 最新视频预览 -->
+        <section class="latest-video">
+            <h2>🎬 最新视频</h2>
+            <div class="video-card">
+                <h3>OpenClaw中文版Windows部署教程</h3>
+                <p>2000万Tokens免费领 · 对接飞书 · 国内网络环境优化</p>
+                <a href="https://www.bilibili.com/video/BV1r8PjzrE1Y" target="_blank" class="video-link">在B站观看 →</a>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>© 2026 有云转晴. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        function detectSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        
+        function isDayTime() {
+            const hour = new Date().getHours();
+            return hour >= 6 && hour < 18;
+        }
+        
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(isDayTime() ? 'light' : 'dark');
+            }
+        }
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                body.classList.remove('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+        
+        initTheme();
+    </script>
+</body>
+</html>

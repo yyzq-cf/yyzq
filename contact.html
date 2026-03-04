@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系 - 有云转晴</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.light-mode {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+        }
+        
+        .light-mode .name {
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .light-mode body::before {
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(88, 86, 214, 0.08) 0%, transparent 50%);
+        }
+        
+        .light-mode .intro,
+        .light-mode .contact,
+        .light-mode .hero-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .intro-content,
+        .light-mode .hero-card-content {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        .light-mode .social-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .footer {
+            color: #86868b;
+        }
+        
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 滚动公告 -->
+    <div class="announcement">
+        <span class="announcement-label">📢 公告：</span>
+        <div class="announcement-content">
+            <span>欢迎访问我的个人主页！VPS推荐页面已上线，RackNerd新年优惠低至$11.29/年！</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">有云转晴</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 主页</a></li>
+                <li><a href="about.html" class="nav-link">👤 关于</a></li>
+                <li><a href="vps.html" class="nav-link">🖥️ VPS</a></li>
+                <li><a href="social.html" class="nav-link">📱 社交</a></li>
+                <li><a href="contact.html" class="nav-link active">📬 联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" id="themeToggle" title="切换明暗主题">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
+    <div class="container">
+        <header class="header-small">
+            <h1>📬 联系合作</h1>
+            <p>欢迎各类合作与交流</p>
+        </header>
+
+        <!-- 联系方式 -->
+        <section class="contact">
+            <h2>💬 联系方式</h2>
+            <div class="contact-item">
+                <i class="fa-brands fa-weixin"></i>
+                <div>
+                    <strong>微信</strong>
+                    <p>lyl986571992</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <strong>邮箱</strong>
+                    <p>联系微信获取邮箱地址</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fa-brands fa-telegram"></i>
+                <div>
+                    <strong>Telegram</strong>
+                    <p><a href="https://t.me/youyunzhuanqing">@youyunzhuanqing</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 合作类型 -->
+        <section class="cooperation">
+            <h2>🤝 合作类型</h2>
+            <div class="coop-cards">
+                <div class="coop-card">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>视频内容</h3>
+                    <p>产品测评、教程植入、品牌推广</p>
+                </div>
+                
+                <div class="coop-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>技术支持</h3>
+                    <p>服务器搭建、技术咨询、项目合作</p>
+                </div>
+                
+                <div class="coop-card">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>其他合作</h3>
+                    <p>商务洽谈、媒体活动、跨界联动</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 其他平台 -->
+        <section class="other-platforms">
+            <h2>🌐 其他平台</h2>
+            <p>也可以在这些平台找到我：</p>
+            <div class="platform-links">
+                <a href="https://www.ywsj365.com" target="_blank">个人博客</a>
+                <a href="https://github.com/yyzq-cf" target="_blank">GitHub</a>
+                <a href="https://space.bilibili.com/519573454" target="_blank">B站</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 有云转晴. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const hour = new Date().getHours();
+            const isDay = hour >= 6 && hour < 18;
+            
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(isDay ? 'light' : 'dark');
+            }
+        }
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                body.classList.remove('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+        
+        initTheme();
+    </script>
+</body>
+</html>

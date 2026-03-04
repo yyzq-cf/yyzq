@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPS推荐 - 有云转晴</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.light-mode {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+        }
+        
+        .light-mode .name {
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .light-mode body::before {
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(88, 86, 214, 0.08) 0%, transparent 50%);
+        }
+        
+        .light-mode .intro,
+        .light-mode .contact,
+        .light-mode .hero-card,
+        .light-mode .vps-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .intro-content {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        .light-mode .social-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .footer {
+            color: #86868b;
+        }
+        
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .light-mode .vps-card.featured {
+            border-color: #007aff;
+        }
+        
+        .light-mode .tag {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007aff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 滚动公告 -->
+    <div class="announcement">
+        <span class="announcement-label">📢 公告：</span>
+        <div class="announcement-content">
+            <span>欢迎访问我的个人主页！VPS推荐页面已上线，RackNerd新年优惠低至$11.29/年！</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">有云转晴</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 主页</a></li>
+                <li><a href="about.html" class="nav-link">👤 关于</a></li>
+                <li><a href="vps.html" class="nav-link active">🖥️ VPS</a></li>
+                <li><a href="social.html" class="nav-link">📱 社交</a></li>
+                <li><a href="contact.html" class="nav-link">📬 联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" id="themeToggle" title="切换明暗主题">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
+    <div class="container">
+        <header class="header-small">
+            <h1>🖥️ VPS推荐</h1>
+            <p>博主自用，稳定可靠</p>
+        </header>
+
+        <div class="vps-container">
+        <!-- 推荐说明 -->
+        <section class="intro">
+            <h2>📢 推荐说明</h2>
+            <div class="intro-content">
+                <p>以下VPS均为我本人长期使用后的推荐，仅供大家参考：</p>
+                <p>🎯 <strong>选择建议</strong>：根据用途选择合适的套餐，不要盲目追求高配置</p>
+                <p>💡 <strong>优惠码</strong>：部分商家有优惠，我会尽量提供优惠链接</p>
+            </div>
+        </section>
+
+        <!-- 2026年新年优惠 -->
+        <section class="intro" id="racknerd">
+            <h2>🎉 RackNerd 2026年新年优惠活动</h2>
+            <p style="color: var(--accent-color); font-size: 13px; margin-bottom: 20px;">限量销售，先到先得！</p>
+            <div class="vps-table-wrapper">
+                <table class="vps-table">
+                    <thead>
+                        <tr>
+                            <th>CPU</th>
+                            <th>RAM</th>
+                            <th>SSD</th>
+                            <th>月流量</th>
+                            <th>价格</th>
+                            <th>带宽</th>
+                            <th>购买</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1x vCPU</td>
+                            <td>1G RAM</td>
+                            <td>24 GB</td>
+                            <td>2TB</td>
+                            <td class="price">$11.29/年</td>
+                            <td>1Gbps</td>
+                            <td><a href="https://my.racknerd.com/aff.php?aff=7273&pid=903" target="_blank" class="table-btn">抢购</a></td>
+                        </tr>
+                        <tr>
+                            <td>1x vCPU</td>
+                            <td>2G RAM</td>
+                            <td>40 GB</td>
+                            <td>3.5TB</td>
+                            <td class="price">$18.29/年</td>
+                            <td>1Gbps</td>
+                            <td><a href="https://my.racknerd.com/aff.php?aff=7273&pid=904" target="_blank" class="table-btn">抢购</a></td>
+                        </tr>
+                        <tr>
+                            <td>2x vCPU</td>
+                            <td>3.5G RAM</td>
+                            <td>65 GB</td>
+                            <td>7TB</td>
+                            <td class="price">$32.49/年</td>
+                            <td>1Gbps</td>
+                            <td><a href="https://my.racknerd.com/aff.php?aff=7273&pid=905" target="_blank" class="table-btn">抢购</a></td>
+                        </tr>
+                        <tr>
+                            <td>3x vCPU</td>
+                            <td>4G RAM</td>
+                            <td>105 GB</td>
+                            <td>9TB</td>
+                            <td class="price">$43.88/年</td>
+                            <td>1Gbps</td>
+                            <td><a href="https://my.racknerd.com/aff.php?aff=7273&pid=906" target="_blank" class="table-btn">抢购</a></td>
+                        </tr>
+                        <tr>
+                            <td>4x vCPU</td>
+                            <td>6G RAM</td>
+                            <td>140 GB</td>
+                            <td>12TB</td>
+                            <td class="price">$59.99/年</td>
+                            <td>1Gbps</td>
+                            <td><a href="https://my.racknerd.com/aff.php?aff=7273&pid=907" target="_blank" class="table-btn">抢购</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        </div>
+
+        <!-- 莱卡云VPS -->
+        <section class="intro" id="lcayun">
+            <h2>☁️ 莱卡云VPS</h2>
+            <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 20px;">香港/日本/韩国/美国多地区可选，免备案，国内访问快</p>
+            
+            <!-- 香港BGP -->
+            <h3 style="font-size: 15px; margin: 20px 0 12px; color: var(--accent-color);">🇭🇰 香港VPS (BGP普通)</h3>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">香港Colo数据中心，3C直连，平均延时30+ms，免备案</p>
+            <div class="vps-table-wrapper">
+                <table class="vps-table">
+                    <thead>
+                        <tr><th>配置</th><th>CPU</th><th>RAM</th><th>硬盘</th><th>带宽</th><th>价格</th><th>购买</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>标配版</td><td>1C</td><td>1G</td><td>30G</td><td>3Mbps</td><td class="price">22元/月</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=308&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                        <tr><td>限量款</td><td>2C</td><td>4G</td><td>30G</td><td>3Mbps</td><td class="price">25元/月</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=367&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 香港CN2 GIA -->
+            <h3 style="font-size: 15px; margin: 20px 0 12px; color: var(--accent-color);">🇭🇰 香港VPS (CN2 GIA)</h3>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">香港Mega Two数据中心，三网CN2 GIA优化，全国超低延迟</p>
+            <div class="vps-table-wrapper">
+                <table class="vps-table">
+                    <thead>
+                        <tr><th>配置</th><th>CPU</th><th>RAM</th><th>硬盘</th><th>带宽</th><th>价格</th><th>购买</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>标配版</td><td>1C</td><td>1G</td><td>20G</td><td>3Mbps</td><td class="price">30元/月</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=309&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 日本VPS -->
+            <h3 style="font-size: 15px; margin: 20px 0 12px; color: var(--accent-color);">🇯🇵 日本VPS (CN2)</h3>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">电信去程163，回程CN2，移动联通双程骨干直连</p>
+            <div class="vps-table-wrapper">
+                <table class="vps-table">
+                    <thead>
+                        <tr><th>配置</th><th>CPU</th><th>RAM</th><th>硬盘</th><th>带宽</th><th>价格</th><th>购买</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CN2</td><td>1-16C</td><td>1-16G</td><td>20-200G</td><td>5-20Mbps</td><td class="price">46元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=312&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                        <tr><td>大带宽</td><td>1-16C</td><td>1-16G</td><td>20-200G</td><td>20-50Mbps</td><td class="price">55元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=312&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 韩国VPS -->
+            <h3 style="font-size: 15px; margin: 20px 0 12px; color: var(--accent-color);">🇰🇷 韩国VPS (CN2)</h3>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">韩国CN2优化线路，大陆访问快速响应</p>
+            <div class="vps-table-wrapper">
+                <table class="vps-table">
+                    <thead>
+                        <tr><th>配置</th><th>CPU</th><th>RAM</th><th>硬盘</th><th>带宽</th><th>价格</th><th>购买</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CN2</td><td>1-32C</td><td>1-128G</td><td>20-100G</td><td>3-20Mbps</td><td class="price">35元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=408&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                        <tr><td>大带宽</td><td>1-32C</td><td>1-128G</td><td>20-100G</td><td>20-50Mbps</td><td class="price">38元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=407&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 美国VPS -->
+            <h3 style="font-size: 15px; margin: 20px 0 12px; color: var(--accent-color);">🇺🇸 美国VPS (高防)</h3>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">T级防御云服务器，回程CN2/9929线路，防御值200G</p>
+            <div class="vps-table-wrapper">
+                <table class="vps-table">
+                    <thead>
+                        <tr><th>配置</th><th>CPU</th><th>RAM</th><th>硬盘</th><th>带宽</th><th>价格</th><th>购买</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>T级防御</td><td>1-16C</td><td>1-16G</td><td>20-100G</td><td>20-300Mbps</td><td class="price">40元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=323&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                        <tr><td>高防</td><td>1-16C</td><td>1-16G</td><td>20-200G</td><td>10-30Mbps</td><td class="price">58元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=351&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                        <tr><td>大带宽</td><td>1-16G</td><td>1-16G</td><td>20-200G</td><td>20-50Mbps</td><td class="price">56元/月起</td><td><a href="https://www.lcayun.com/cart?action=configureproduct&pid=350&aff=PQCSKOCK" target="_blank" class="table-btn">购买</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- VPS推荐列表 -->
+        <section class="vps-list" id="other">
+            <!-- 搬瓦工 -->
+            <div class="vps-card featured">
+                <div class="vps-header">
+                    <h3>🏆 搬瓦工 BandwagonHOST</h3>
+                    <span class="tag">最推荐</span>
+                </div>
+                <p class="vps-desc">稳定、速度快、线路好，支持支付宝</p>
+                <div class="vps-features">
+                    <span><i class="fa-solid fa-check"></i> 稳定性极佳</span>
+                    <span><i class="fa-solid fa-check"></i> 客服响应快</span>
+                    <span><i class="fa-solid fa-check"></i> 支持中英文</span>
+                </div>
+                <div class="vps-price">
+                    <span class="price">$49.99/年</span>
+                    <span class="specs">1核 / 1GB / 20GB SSD</span>
+                </div>
+                <a href="https://bandwagonhost.com" target="_blank" class="vps-btn">查看详情 →</a>
+            </div>
+
+            <!-- DMIT -->
+            <div class="vps-card">
+                <div class="vps-header">
+                    <h3>🔥 DMIT</h3>
+                    <span class="tag">CN2 GIA</span>
+                </div>
+                <p class="vps-desc">接入CN2 GIA线路，国内访问速度快</p>
+                <div class="vps-features">
+                    <span><i class="fa-solid fa-check"></i> 回国线路优质</span>
+                    <span><i class="fa-solid fa-check"></i> 带宽大</span>
+                    <span><i class="fa-solid fa-check"></i> 适合建站</span>
+                </div>
+                <div class="vps-price">
+                    <span class="price">$89.99/年</span>
+                    <span class="specs">1核 / 2GB / 30GB SSD</span>
+                </div>
+                <a href="https://dmit.io" target="_blank" class="vps-btn">查看详情 →</a>
+            </div>
+
+            <!-- RackNerd -->
+            <div class="vps-card">
+                <div class="vps-header">
+                    <h3>💰 RackNerd</h3>
+                    <span class="tag">性价比</span>
+                </div>
+                <p class="vps-desc">价格便宜，适合入门学习</p>
+                <div class="vps-features">
+                    <span><i class="fa-solid fa-check"></i> 价格实惠</span>
+                    <span><i class="fa-solid fa-check"></i> 机房多</span>
+                    <span><i class="fa-solid fa-check"></i> 适合练手</span>
+                </div>
+                <div class="vps-price">
+                    <span class="price">$17.99/年</span>
+                    <span class="specs">1核 / 1.5GB / 18GB SSD</span>
+                </div>
+                <a href="https://racknerd.com" target="_blank" class="vps-btn">查看详情 →</a>
+            </div>
+
+            <!-- 腾讯云 -->
+            <div class="vps-card">
+                <div class="vps-header">
+                    <h3>☁️ 腾讯云</h3>
+                    <span class="tag">国内</span>
+                </div>
+                <p class="vps-desc">国内云服务器，备案后网站速度更快</p>
+                <div class="vps-features">
+                    <span><i class="fa-solid fa-check"></i> 国内访问快</span>
+                    <span><i class="fa-solid fa-check"></i> 需要备案</span>
+                    <span><i class="fa-solid fa-check"></i> 学生优惠</span>
+                </div>
+                <div class="vps-price">
+                    <span class="price">¥89/年</span>
+                    <span class="specs">1核 / 2GB / 50GB SSD</span>
+                </div>
+                <a href="https://cloud.tencent.com" target="_blank" class="vps-btn">查看详情 →</a>
+            </div>
+
+            <!-- 阿里云 -->
+            <div class="vps-card">
+                <div class="vps-header">
+                    <h3>🐱 阿里云</h3>
+                    <span class="tag">国内</span>
+                </div>
+                <p class="vps-desc">国内头部云服务商，稳定可靠</p>
+                <div class="vps-features">
+                    <span><i class="fa-solid fa-check"></i> 稳定性高</span>
+                    <span><i class="fa-solid fa-check"></i> 产品丰富</span>
+                    <span><i class="fa-solid fa-check"></i> 需要备案</span>
+                </div>
+                <div class="vps-price">
+                    <span class="price">¥99/年</span>
+                    <span class="specs">1核 / 2GB / 40GB SSD</span>
+                </div>
+                <a href="https://www.aliyun.com" target="_blank" class="vps-btn">查看详情 →</a>
+            </div>
+
+            <!-- 硅云 -->
+            <div class="vps-card">
+                <div class="vps-header">
+                    <h3>☁️ 硅云</h3>
+                    <span class="tag">香港</span>
+                </div>
+                <p class="vps-desc">香港本土云服务商，CN2线路</p>
+                <div class="vps-features">
+                    <span><i class="fa-solid fa-check"></i> 香港CN2</span>
+                    <span><i class="fa-solid fa-check"></i> 免备案</span>
+                    <span><i class="fa-solid fa-check"></i> 价格适中</span>
+                </div>
+                <div class="vps-price">
+                    <span class="price">¥199/年</span>
+                    <span class="specs">1核 / 1GB / 20GB SSD</span>
+                </div>
+                <a href="https://www.svicloud.cc" target="_blank" class="vps-btn">查看详情 →</a>
+            </div>
+        </section>
+
+        <!-- 选择建议 -->
+        <section class="intro">
+            <h2>💡 如何选择？</h2>
+            <div class="intro-content">
+                <p>🛒 <strong>学习/测试</strong>：RackNerd ($18/年) - 便宜够用</p>
+                <p>📺 <strong>建站/博客</strong>：搬瓦工/DMIT - 稳定快速</p>
+                <p>🇨🇳 <strong>国内用户</strong>：腾讯云/阿里云 - 需备案，速度快</p>
+                <p>🌍 <strong>免备案</strong>：硅云/搬瓦工香港 - 快速免备案</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 有云转晴. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const hour = new Date().getHours();
+            const isDay = hour >= 6 && hour < 18;
+            
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(isDay ? 'light' : 'dark');
+            }
+        }
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                body.classList.remove('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+        
+        initTheme();
+    </script>
+</body>
+</html>

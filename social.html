@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社交媒体 - 有云转晴</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.light-mode {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+        }
+        
+        .light-mode .name {
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .light-mode body::before {
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(88, 86, 214, 0.08) 0%, transparent 50%);
+        }
+        
+        .light-mode .intro,
+        .light-mode .contact,
+        .light-mode .hero-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .intro-content,
+        .light-mode .hero-card-content {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        .light-mode .social-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .footer {
+            color: #86868b;
+        }
+        
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 滚动公告 -->
+    <div class="announcement">
+        <span class="announcement-label">📢 公告：</span>
+        <div class="announcement-content">
+            <span>欢迎访问我的个人主页！VPS推荐页面已上线，RackNerd新年优惠低至$11.29/年！</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">有云转晴</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 主页</a></li>
+                <li><a href="about.html" class="nav-link">👤 关于</a></li>
+                <li><a href="vps.html" class="nav-link">🖥️ VPS</a></li>
+                <li><a href="social.html" class="nav-link active">📱 社交</a></li>
+                <li><a href="contact.html" class="nav-link">📬 联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" id="themeToggle" title="切换明暗主题">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
+    <div class="container">
+        <header class="header-small">
+            <h1>📱 关注我</h1>
+            <p>在以下平台找到我</p>
+        </header>
+
+        <!-- 社交媒体链接 -->
+        <section class="social-links">
+            <a href="https://space.bilibili.com/519573454" target="_blank" class="social-card bilibili">
+                <i class="fa-brands fa-bilibili"></i>
+                <span>B站</span>
+                <small>1.3万粉丝 · 342视频</small>
+            </a>
+            
+            <a href="https://www.douyin.com/user/MS4wLjABAAAACsbkrcGbNrws8XnluGSg4fHMtIIhyJ6X1Rwp8xy-d78?from_tab_name=main" target="_blank" class="social-card douyin">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>抖音</span>
+                <small>短视频内容</small>
+            </a>
+            
+            <a href="https://www.tiktok.com/@yyzq.cf" target="_blank" class="social-card tiktok">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>TikTok</span>
+                <small>海外内容</small>
+            </a>
+            
+            <a href="https://www.youtube.com/@yyzqcf0501" target="_blank" class="social-card youtube">
+                <i class="fa-brands fa-youtube"></i>
+                <span>YouTube</span>
+                <small>技术教程</small>
+            </a>
+            
+            <a href="https://github.com/yyzq-cf" target="_blank" class="social-card github">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+                <small>开源项目</small>
+            </a>
+            
+            <a href="https://t.me/youyunzhuanqing" target="_blank" class="social-card telegram">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Telegram</span>
+                <small>即时交流</small>
+            </a>
+            
+            <a href="https://www.kuaishou.com/profile/3xse8cn9989e7dw" target="_blank" class="social-card kuaishou">
+                <i class="fa-solid fa-video"></i>
+                <span>快手</span>
+                <small>生活记录</small>
+            </a>
+            
+            <a href="https://www.ywsj365.com" target="_blank" class="social-card website">
+                <i class="fa-solid fa-globe"></i>
+                <span>博客</span>
+                <small>技术文章</small>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 有云转晴. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const hour = new Date().getHours();
+            const isDay = hour >= 6 && hour < 18;
+            
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(isDay ? 'light' : 'dark');
+            }
+        }
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                body.classList.remove('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+        
+        initTheme();
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - 有云转晴</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.light-mode {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+        }
+        
+        .light-mode .name {
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .light-mode body::before {
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(88, 86, 214, 0.08) 0%, transparent 50%);
+        }
+        
+        .light-mode .intro,
+        .light-mode .contact,
+        .light-mode .hero-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .intro-content,
+        .light-mode .hero-card-content {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        .light-mode .social-card {
+            border-color: rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        
+        .light-mode .footer {
+            color: #86868b;
+        }
+        
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 滚动公告 -->
+    <div class="announcement">
+        <span class="announcement-label">📢 公告：</span>
+        <div class="announcement-content">
+            <span>欢迎访问我的个人主页！VPS推荐页面已上线，RackNerd新年优惠低至$11.29/年！</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">有云转晴</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 主页</a></li>
+                <li><a href="about.html" class="nav-link active">👤 关于</a></li>
+                <li><a href="vps.html" class="nav-link">🖥️ VPS</a></li>
+                <li><a href="social.html" class="nav-link">📱 社交</a></li>
+                <li><a href="contact.html" class="nav-link">📬 联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" id="themeToggle" title="切换明暗主题">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
+    <div class="container">
+        <header class="header">
+            <div class="avatar">
+                <img src="avatar.png" alt="头像" id="avatar-img">
+            </div>
+            <h1 class="name">有云转晴</h1>
+            <p class="bio">云计算 · 数码科技 · Linux服务器 · 分享各种开源项目</p>
+        </header>
+
+        <!-- 个人介绍 -->
+        <section class="intro">
+            <h2>👋 你好，我是有云转晴</h2>
+            <p>热爱技术，享受折腾的IT从业者</p>
+            <div class="intro-content">
+                <p>🎯 <strong>专注领域</strong>：云计算、数码科技、Linux服务器运维</p>
+                <p>💡 <strong>分享内容</strong>：各类开源项目部署教程、AI工具使用技巧、服务器搭建经验</p>
+                <p>🎬 <strong>创作数据</strong>：已发布 <strong>342</strong> 个视频，累计播放量可观</p>
+                <p>🌐 <strong>个人网站</strong>：<a href="https://www.ywsj365.com" target="_blank">www.ywsj365.com</a> - 记录技术笔记与项目分享</p>
+                <p>🤝 <strong>合作联系</strong>：欢迎各类技术合作、赞助及交流</p>
+                <p>📌 <strong>核心理念</strong>：技术赋能生活，在折腾中成长，在分享中进步</p>
+            </div>
+        </section>
+
+        <!-- 技能标签 -->
+        <section class="skills">
+            <h2>🛠️ 技能树</h2>
+            <div class="skill-tags">
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">云计算</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">服务器运维</span>
+                <span class="skill-tag">AI工具</span>
+                <span class="skill-tag">开源项目</span>
+                <span class="skill-tag">短视频创作</span>
+                <span class="skill-tag"> NAS</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 有云转晴. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const hour = new Date().getHours();
+            const isDay = hour >= 6 && hour < 18;
+            
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme(isDay ? 'light' : 'dark');
+            }
+        }
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                body.classList.remove('light-mode');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+        
+        initTheme();
+    </script>
+</body>
+</html>
