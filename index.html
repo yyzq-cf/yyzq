@@ -135,6 +135,13 @@
             color: var(--text-secondary);
             font-family: 'SF Mono', Monaco, 'Courier New', monospace;
         }
+        
+        .clock-date {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            margin-top: 4px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -190,6 +197,7 @@
                     <div class="clock-number" style="top:12%;left:15%;">11</div>
                 </div>
                 <div class="clock-digital" id="digitalTime"></div>
+                <div class="clock-date" id="clockDate"></div>
             </div>
         </div>
             <div class="avatar">
@@ -237,15 +245,19 @@
         // 更新时间显示 - 时钟样式
         function updateTime() {
             const now = new Date();
-            now.setTime(now.getTime() + now.getTimezoneOffset() * 60000 + 8 * 3600000); // 北京时间
+            const beijingTime = new Date(now.getTime() + (8 * 60 - now.getTimezoneOffset()) * 60000);
             
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
+            const hours = beijingTime.getHours();
+            const minutes = beijingTime.getMinutes();
+            const seconds = beijingTime.getSeconds();
             
             // 数字时间
             const digitalStr = `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
             document.getElementById('digitalTime').textContent = digitalStr;
+            
+            // 日期
+            const dateStr = `${beijingTime.getFullYear()}-${String(beijingTime.getMonth()+1).padStart(2,'0')}-${String(beijingTime.getDate()).padStart(2,'0')}`;
+            document.getElementById('clockDate').textContent = dateStr;
             
             // 指针角度
             const hourDeg = (hours % 12) * 30 + minutes * 0.5;
