@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>有云转晴 - 个人主页</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         /* 亮色主题 */
         body.light-mode {
@@ -87,7 +87,7 @@
         <!-- 头部区域 -->
         <header class="header">
             <div class="avatar">
-                <img src="avatar.png" alt="头像" id="avatar-img">
+                <img src="images/avatar.png" alt="头像" id="avatar-img">
             </div>
             <h1 class="name">有云转晴</h1>
             <p class="bio">大家好！热爱技术，喜欢折腾</p>
@@ -114,10 +114,10 @@
         <!-- 最新视频预览 -->
         <section class="latest-video">
             <h2>🎬 最新视频</h2>
-            <div class="video-card">
-                <h3>OpenClaw中文版Windows部署教程</h3>
-                <p>2000万Tokens免费领 · 对接飞书 · 国内网络环境优化</p>
-                <a href="https://www.bilibili.com/video/BV1r8PjzrE1Y" target="_blank" class="video-link">在B站观看 →</a>
+            <div id="video-container">
+                <div class="video-card loading">
+                    <p>正在加载最新视频...</p>
+                </div>
             </div>
         </section>
 
@@ -166,6 +166,64 @@
         });
         
         initTheme();
+        
+        // 自动获取B站最新视频
+        const UID = '519573454';
+        
+        async function fetchLatestVideo() {
+            try {
+                // 使用代理服务解决CORS问题
+                const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                const apiUrl = encodeURIComponent(`https://api.bilibili.com/x/space/arc/search?mid=${UID}&ps=1&pn=1`);
+                
+                const response = await fetch(proxyUrl + apiUrl);
+                const data = await response.json();
+                
+                if (data.data && data.data.list && data.data.list.vlist && data.data.list.vlist.length > 0) {
+                    const video = data.data.list.vlist[0];
+                    const videoContainer = document.getElementById('video-container');
+                    
+                    videoContainer.innerHTML = `
+                        <div class="video-card">
+                            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:15px;">
+                                <iframe src="https://player.bilibili.com/player.html?bvid=${video.bvid}&page=1&high_quality=1" 
+                                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+                                    style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                </iframe>
+                            </div>
+                            <h3>${video.title}</h3>
+                            <p>📺 ${(video.play / 10000).toFixed(1)}万播放 · 💬 ${video.video_review}弹幕 · 👍 ${video.like}</p>
+                            <a href="https://www.bilibili.com/video/${video.bvid}" target="_blank" class="video-link">在B站打开 →</a>
+                        </div>
+                    `;
+                } else {
+                    showDefaultVideo();
+                }
+            } catch (error) {
+                console.error('获取视频失败:', error);
+                showDefaultVideo();
+            }
+        }
+        
+        function showDefaultVideo() {
+            document.getElementById('video-container').innerHTML = `
+                <div class="video-card">
+                    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:15px;">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1r8PjzrE1Y&page=1&high_quality=1" 
+                            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        </iframe>
+                    </div>
+                    <h3>OpenClaw中文版Windows部署教程</h3>
+                    <p>2000万Tokens免费领 · 对接飞书 · 国内网络环境优化</p>
+                    <a href="https://www.bilibili.com/video/BV1r8PjzrE1Y" target="_blank" class="video-link">在B站打开 →</a>
+                    <p style="font-size:12px;color:#888;margin-top:8px;">(自动获取失败，显示默认视频)</p>
+                </div>
+            `;
+        }
+        
+        // 页面加载完成后获取视频
+        fetchLatestVideo();
     </script>
 </body>
 </html>

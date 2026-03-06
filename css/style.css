@@ -943,3 +943,21 @@ body.light-mode .vps-sidebar {
         display: none;
     }
 }
+/* 视频封面样式 */
+.video-cover {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.video-cover:hover {
+    transform: scale(1.02);
+}
+
+.loading {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 20px;
+}

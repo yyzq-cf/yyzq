@@ -1,0 +1,50 @@
+name: 自动更新B站最新视频
+
+on:
+  schedule:
+    # 每天北京时间早上8点运行 (UTC 00:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-video:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 设置 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: 安装依赖
+      run: npm install axios cheerio
+    
+    - name: 获取最新视频
+      run: node .github/scripts/fetch-bilibili.js
+      env:
+        BILIBILI_UID: 519573454
+    
+    - name: 检查是否有变更
+      id: check_changes
+      run: |
+        if git diff --quiet; then
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "没有新视频需要更新"
+        else
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "发现新视频，准备提交"
+        fi
+    
+    - name: 提交并推送变更
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Actions Bot"
+        git add -A
+        git commit -m "🦞 自动更新B站最新视频 - $(date +'%Y-%m-%d %H:%M:%S')"
+        git push
