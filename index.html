@@ -52,6 +52,15 @@
             background: rgba(255, 255, 255, 0.9);
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
+        
+        /* 当前时间显示 */
+        .current-time {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            opacity: 0.8;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -86,6 +95,7 @@
     <div class="container">
         <!-- 头部区域 -->
         <header class="header">
+            <div class="current-time" id="currentTime"></div>
             <div class="avatar">
                 <img src="images/avatar.png" alt="头像" id="avatar-img">
             </div>
@@ -128,6 +138,26 @@
     </div>
 
     <script>
+        // 更新时间显示
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                timeZone: 'Asia/Shanghai'
+            };
+            const timeStr = now.toLocaleString('zh-CN', options);
+            document.getElementById('currentTime').textContent = timeStr;
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
