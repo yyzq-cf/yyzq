@@ -245,7 +245,8 @@
         // 更新时间显示 - 时钟样式
         function updateTime() {
             const now = new Date();
-            const beijingTime = new Date(now.getTime() + (8 * 60 - now.getTimezoneOffset()) * 60000);
+            // 转换为北京时间 (UTC+8)
+            const beijingTime = new Date(now.getTime() + (8 * 60 + now.getTimezoneOffset()) * 60000);
             
             const hours = beijingTime.getHours();
             const minutes = beijingTime.getMinutes();
