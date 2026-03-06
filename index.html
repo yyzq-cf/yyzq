@@ -256,7 +256,12 @@
             document.getElementById('digitalTime').textContent = digitalStr;
             
             // 日期
-            const dateStr = `${beijingTime.getFullYear()}-${String(beijingTime.getMonth()+1).padStart(2,'0')}-${String(beijingTime.getDate()).padStart(2,'0')}`;
+            const year = beijingTime.getFullYear();
+            const month = beijingTime.getMonth() + 1;
+            const day = beijingTime.getDate();
+            const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            const weekDay = weekDays[beijingTime.getDay()];
+            const dateStr = `${year}年${month}月${day}日 ${weekDay}`;
             document.getElementById('clockDate').textContent = dateStr;
             
             // 指针角度
