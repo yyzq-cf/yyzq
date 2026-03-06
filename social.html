@@ -51,8 +51,27 @@
             background: rgba(255, 255, 255, 0.9);
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
+        
+        /* 自定义图标样式 */
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+        
+        .social-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+        
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 滚动公告 -->
@@ -79,7 +98,7 @@
 
     <!-- 主题切换按钮 -->
     <button class="theme-toggle" id="themeToggle" title="切换明暗主题">
-        <i class="fa-solid fa-moon"></i>
+        <span>🌙</span>
     </button>
     
     <div class="container">
@@ -90,50 +109,58 @@
 
         <!-- 社交媒体链接 -->
         <section class="social-links">
+            <!-- B站 -->
             <a href="https://space.bilibili.com/519573454" target="_blank" class="social-card bilibili">
-                <i class="fa-brands fa-bilibili"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/HD-Icons/border-radius/B站.png" class="social-img" alt="B站">
                 <span>B站</span>
                 <small>1.3万粉丝 · 342视频</small>
             </a>
             
+            <!-- 抖音 -->
             <a href="https://www.douyin.com/user/MS4wLjABAAAACsbkrcGbNrws8XnluGSg4fHMtIIhyJ6X1Rwp8xy-d78?from_tab_name=main" target="_blank" class="social-card douyin">
-                <i class="fa-brands fa-tiktok"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/upload/抖音.png" class="social-img" alt="抖音">
                 <span>抖音</span>
                 <small>短视频内容</small>
             </a>
             
+            <!-- TikTok -->
             <a href="https://www.tiktok.com/@yyzq.cf" target="_blank" class="social-card tiktok">
-                <i class="fa-brands fa-tiktok"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/HD-Icons/border-radius/tiktok-1.png" class="social-img" alt="TikTok">
                 <span>TikTok</span>
                 <small>海外内容</small>
             </a>
             
+            <!-- YouTube -->
             <a href="https://www.youtube.com/@yyzqcf0501" target="_blank" class="social-card youtube">
-                <i class="fa-brands fa-youtube"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/HD-Icons/border-radius/youtube.png" class="social-img" alt="YouTube">
                 <span>YouTube</span>
                 <small>技术教程</small>
             </a>
             
+            <!-- GitHub -->
             <a href="https://github.com/yyzq-cf" target="_blank" class="social-card github">
-                <i class="fa-brands fa-github"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/HD-Icons/border-radius/github-1.png" class="social-img" alt="GitHub">
                 <span>GitHub</span>
                 <small>开源项目</small>
             </a>
             
+            <!-- Telegram -->
             <a href="https://t.me/youyunzhuanqing" target="_blank" class="social-card telegram">
-                <i class="fa-brands fa-telegram"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/HD-Icons/border-radius/telegram-1.png" class="social-img" alt="Telegram">
                 <span>Telegram</span>
                 <small>即时交流</small>
             </a>
             
+            <!-- 快手 -->
             <a href="https://www.kuaishou.com/profile/3xse8cn9989e7dw" target="_blank" class="social-card kuaishou">
-                <i class="fa-solid fa-video"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/upload/快手.png" class="social-img" alt="快手">
                 <span>快手</span>
                 <small>生活记录</small>
             </a>
             
+            <!-- 博客 -->
             <a href="https://www.ywsj365.com" target="_blank" class="social-card website">
-                <i class="fa-solid fa-globe"></i>
+                <img src="https://ddns.ywsj365.com:50560/icons/upload/ywsj.png" class="social-img" alt="博客">
                 <span>博客</span>
                 <small>技术文章</small>
             </a>
@@ -163,10 +190,10 @@
         function setTheme(theme) {
             if (theme === 'light') {
                 body.classList.add('light-mode');
-                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                themeToggle.innerHTML = '<span>☀️</span>';
             } else {
                 body.classList.remove('light-mode');
-                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                themeToggle.innerHTML = '<span>🌙</span>';
             }
             localStorage.setItem('theme', theme);
         }
