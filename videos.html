@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频教程 - 运维世界</title>
+    <meta name="description" content="运维世界视频教程集合 - OpenClaw部署、Linux运维、Docker容器化">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🌧️ 运维世界</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="videos.html" class="active">视频</a></li>
+                <li><a href="scripts.html">脚本</a></li>
+                <li><a href="reviews.html">VPS评测</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <header class="page-header">
+        <div class="container">
+            <h1>🎬 视频教程</h1>
+            <p>从入门到进阶，手把手教你掌握技术</p>
+        </div>
+    </header>
+
+    <!-- 视频列表 -->
+    <section class="videos-section">
+        <div class="container">
+            <!-- 平台筛选 -->
+            <div class="platform-filter">
+                <button class="filter-btn active" data-platform="all">全部</button>
+                <button class="filter-btn" data-platform="youtube"><i class="fab fa-youtube"></i> YouTube</button>
+                <button class="filter-btn" data-platform="bilibili"><i class="fab fa-bilibili"></i> 哔哩哔哩</button>
+            </div>
+
+            <!-- 视频网格 -->
+            <div class="videos-grid" id="videos-grid">
+                <!-- YouTube 视频 -->
+                <div class="video-card" data-platform="youtube">
+                    <a href="https://www.youtube.com/watch?v=E5AHlwy1MrE" target="_blank" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/E5AHlwy1MrE/maxresdefault.jpg" alt="Windows部署教程">
+                            <span class="duration">18:57</span>
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>OpenClaw中文版Windows部署教程</h3>
+                            <p class="video-meta">3,080 次观看 · YouTube</p>
+                            <div class="video-tags">
+                                <span class="tag">OpenClaw</span>
+                                <span class="tag">Windows</span>
+                                <span class="tag">部署</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video-card" data-platform="youtube">
+                    <a href="https://www.youtube.com/watch?v=UshT0LNJt30" target="_blank" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/UshT0LNJt30/maxresdefault.jpg" alt="Mac部署教程">
+                            <span class="duration">16:46</span>
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Mac部署OpenClaw中文版教程</h3>
+                            <p class="video-meta">1,377 次观看 · YouTube</p>
+                            <div class="video-tags">
+                                <span class="tag">OpenClaw</span>
+                                <span class="tag">Mac</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video-card" data-platform="youtube">
+                    <a href="https://www.youtube.com/watch?v=zd3KnaUDDlg" target="_blank" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/zd3KnaUDDlg/maxresdefault.jpg" alt="Linux部署教程">
+                            <span class="duration">15:43</span>
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Linux部署OpenClaw中文版教程</h3>
+                            <p class="video-meta">595 次观看 · YouTube</p>
+                            <div class="video-tags">
+                                <span class="tag">OpenClaw</span>
+                                <span class="tag">Linux</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video-card" data-platform="youtube">
+                    <a href="https://www.youtube.com/watch?v=rGf6JQCieME" target="_blank" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/rGf6JQCieME/maxresdefault.jpg" alt="QQ接入教程">
+                            <span class="duration">3:16</span>
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>腾讯QQ正式开放OpenClaw官方接入</h3>
+                            <p class="video-meta">223 次观看 · YouTube</p>
+                            <div class="video-tags">
+                                <span class="tag">OpenClaw</span>
+                                <span class="tag">QQ</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video-card" data-platform="youtube">
+                    <a href="https://www.youtube.com/watch?v=JWzV8G0tBTA" target="_blank" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://img.youtube.com/vi/JWzV8G0tBTA/maxresdefault.jpg" alt="NAS部署教程">
+                            <span class="duration">12:58</span>
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>飞牛NAS使用Docker部署OpenClaw</h3>
+                            <p class="video-meta">120 次观看 · YouTube</p>
+                            <div class="video-tags">
+                                <span class="tag">OpenClaw</span>
+                                <span class="tag">NAS</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- B站视频占位 -->
+                <div class="video-card" data-platform="bilibili">
+                    <a href="https://www.bilibili.com/video/BV1ifNcz8Eti/" target="_blank" class="video-link">
+                        <div class="video-thumb">
+                            <img src="https://i0.hdslb.com/bfs/archive/0.jpg" alt="B站视频" onerror="this.src='https://via.placeholder.com/640x360?text=B站视频'">
+                            <span class="duration">--:--</span>
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>最新B站视频（待添加）</h3>
+                            <p class="video-meta">哔哩哔哩</p>
+                            <div class="video-tags">
+                                <span class="tag">B站</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 分页 -->
+            <div class="pagination">
+                <button class="page-btn" disabled>« 上一页</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn" disabled>下一页 »</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 订阅提醒 -->
+    <section class="subscribe-section">
+        <div class="container">
+            <div class="subscribe-box">
+                <h2>📺 订阅我们的频道</h2>
+                <p>获取最新教程和精彩内容</p>
+                <div class="subscribe-buttons">
+                    <a href="https://www.youtube.com/@ywsj365_com?sub_confirmation=1" target="_blank" class="btn btn-youtube">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                    <a href="https://space.bilibili.com/你的B站ID" target="_blank" class="btn btn-bilibili">
+                        <i class="fab fa-bilibili"></i> 哔哩哔哩
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🌧️ 运维世界</h3>
+                    <p>专注于技术教程与资源共享</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="blog.html">博客</a></li>
+                        <li><a href="videos.html">视频</a></li>
+                        <li><a href="scripts.html">脚本</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@ywsj365_com">YouTube</a></li>
+                        <li><a href="#">哔哩哔哩</a></li>
+                        <li><a href="https://github.com/yyzq-cf/yyzq">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2021-2026 运维世界. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // 平台筛选功能
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 更新按钮状态
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // 筛选视频
+                const platform = btn.dataset.platform;
+                videoCards.forEach(card => {
+                    if (platform === 'all' || card.dataset.platform === platform) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

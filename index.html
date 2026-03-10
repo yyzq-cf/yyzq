@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运维世界 - 有云转晴的个人主页</title>
+    <meta name="description" content="专注于VPS评测、Linux运维、Docker容器化与建站教程的科技内容创作者">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">🌧️ 运维世界</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="scripts.html">脚本</a></li>
+                <li><a href="reviews.html">VPS评测</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>🌧️ 有云转晴</h1>
+                <p class="tagline">专注于VPS评测、Linux运维、Docker容器化与建站教程</p>
+                <p class="intro">从零基础到生产实战，用最低成本搭建属于你自己的云端世界</p>
+                <div class="hero-btns">
+                    <a href="videos.html" class="btn btn-primary"><i class="fas fa-play"></i> 观看教程</a>
+                    <a href="blog.html" class="btn btn-secondary"><i class="fas fa-book"></i> 阅读博客</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-video"></i>
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">视频教程</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">1K+</span>
+                    <span class="stat-label">订阅粉丝</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-code"></i>
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">脚本工具</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 内容分类 -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">📚 内容分类</h2>
+            <div class="category-grid">
+                <a href="blog.html?cat=linux" class="category-card">
+                    <div class="cat-icon">🐧</div>
+                    <h3>Linux入门</h3>
+                    <p>SSH工具、Linux命令、服务器监控、安全优化</p>
+                </a>
+                <a href="blog.html?cat=web" class="category-card">
+                    <div class="cat-icon">🌐</div>
+                    <h3>建站学习</h3>
+                    <p>域名、博客、网盘、监控、视频站、导航站</p>
+                </a>
+                <a href="blog.html?cat=docker" class="category-card">
+                    <div class="cat-icon">🐳</div>
+                    <h3>Docker学习</h3>
+                    <p>容器化入门到进阶，镜像构建与服务部署</p>
+                </a>
+                <a href="blog.html?cat=vps" class="category-card">
+                    <div class="cat-icon">☁️</div>
+                    <h3>VPS评测</h3>
+                    <p>云服务器测评、优惠信息、性价比分析</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新视频 -->
+    <section class="latest-videos">
+        <div class="container">
+            <h2 class="section-title">🎬 最新教程</h2>
+            <div class="video-grid" id="video-list">
+                <!-- 视频卡片将通过JS动态加载 -->
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/E5AHlwy1MrE/maxresdefault.jpg" alt="Windows部署教程">
+                        <span class="duration">18:57</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>OpenClaw中文版Windows部署教程</h3>
+                        <p class="video-meta">3,080 次观看</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/UshT0LNJt30/maxresdefault.jpg" alt="Mac部署教程">
+                        <span class="duration">16:46</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>Mac部署OpenClaw中文版教程</h3>
+                        <p class="video-meta">1,377 次观看</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/zd3KnaUDDlg/maxresdefault.jpg" alt="Linux部署教程">
+                        <span class="duration">15:43</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>Linux部署OpenClaw中文版教程</h3>
+                        <p class="video-meta">595 次观看</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-more">
+                <a href="videos.html" class="btn btn-outline">查看全部视频 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 一键脚本 -->
+    <section class="scripts-section">
+        <div class="container">
+            <h2 class="section-title">⚡ 一键脚本</h2>
+            <div class="scripts-grid">
+                <div class="script-card">
+                    <div class="script-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>OpenClaw 一键安装</h3>
+                    <p>支持 Windows、Mac、Linux 多平台</p>
+                    <code>bash <(curl -Ls https://yyzq.gq/openclaw.sh)</code>
+                    <a href="#" class="btn btn-sm">查看详情</a>
+                </div>
+                <div class="script-card">
+                    <div class="script-icon"><i class="fas fa-docker"></i></div>
+                    <h3>Docker 一键部署</h3>
+                    <p>常用服务 Docker 一键部署</p>
+                    <code>bash <(curl -Ls https://yyzq.gq/docker.sh)</code>
+                    <a href="#" class="btn btn-sm">查看详情</a>
+                </div>
+                <div class="script-card">
+                    <div class="script-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>服务器性能测试</h3>
+                    <p>综合跑分、硬盘IO、网络测速</p>
+                    <code>bash <(curl -Ls https://yyzq.gq/bench.sh)</code>
+                    <a href="#" class="btn btn-sm">查看详情</a>
+                </div>
+            </div>
+            <div class="section-more">
+                <a href="scripts.html" class="btn btn-outline">查看全部脚本 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社交链接 -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title">📱 关注我们</h2>
+            <div class="social-links">
+                <a href="https://www.ywsj365.cn" class="social-link" title="博客">
+                    <i class="fas fa-blog"></i>
+                    <span>博客</span>
+                </a>
+                <a href="https://www.youtube.com/@ywsj365_com" class="social-link" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://space.bilibili.com/你的B站ID" class="social-link" title="Bilibili">
+                    <i class="fab fa-bilibili"></i>
+                    <span>哔哩哔哩</span>
+                </a>
+                <a href="https://github.com/yyzq-cf/yyzq" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:your@email.com" class="social-link" title="邮箱">
+                    <i class="fas fa-envelope"></i>
+                    <span>邮箱</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🌧️ 运维世界</h3>
+                    <p>专注于技术教程与资源共享</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="blog.html">博客</a></li>
+                        <li><a href="videos.html">视频</a></li>
+                        <li><a href="scripts.html">脚本</a></li>
+                        <li><a href="about.html">关于</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">免费API</a></li>
+                        <li><a href="#">VPS推荐</a></li>
+                        <li><a href="#">工具集合</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2021-2026 运维世界. All rights reserved.</p>
+                <p>由 <a href="https://github.com/yyzq-cf/yyzq">YYZQ</a> 用心制作 ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

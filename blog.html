@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客 - 运维世界</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .page-header { padding: 120px 0 60px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; text-align: center; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 60px 0; }
+        .blog-card { background: var(--bg-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .blog-thumb { height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+        .blog-content { padding: 25px; }
+        .blog-content h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .blog-content p { color: var(--text-light); margin-bottom: 15px; font-size: 0.95rem; }
+        .blog-meta { color: var(--text-light); font-size: 0.85rem; }
+        .cat-tag { display: inline-block; background: var(--primary-color); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🌧️ 运维世界</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html" class="active">博客</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="scripts.html">脚本</a></li>
+                <li><a href="reviews.html">VPS评测</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>📝 技术博客</h1>
+            <p>分享技术教程与实战经验</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-thumb">🐧</div>
+                <div class="blog-content">
+                    <span class="cat-tag">Linux</span>
+                    <h3>Linux 服务器日常维护命令大全</h3>
+                    <p>常用Linux命令、系统监控、网络配置等基础指南</p>
+                    <div class="blog-meta">📅 2026-03-01 · 👁 123 次阅读</div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-thumb">🐳</div>
+                <div class="blog-content">
+                    <span class="cat-tag">Docker</span>
+                    <h3>Docker 从入门到进阶完全指南</h3>
+                    <p>Docker概念、安装、镜像管理、容器部署全攻略</p>
+                    <div class="blog-meta">📅 2026-02-20 · 👁 256 次阅读</div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-thumb">🌐</div>
+                <div class="blog-content">
+                    <span class="cat-tag">建站</span>
+                    <h3>如何快速搭建个人博客</h3>
+                    <p>域名购买、解析、博客程序安装全流程</p>
+                    <div class="blog-meta">📅 2026-02-10 · 👁 189 次阅读</div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-thumb">☁️</div>
+                <div class="blog-content">
+                    <span class="cat-tag">VPS</span>
+                    <h3>Oracle Cloud 永久免费 VPS 申请教程</h3>
+                    <p>甲骨文免费云服务器申请与配置指南</p>
+                    <div class="blog-meta">📅 2026-01-25 · 👁 567 次阅读</div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2021-2026 运维世界. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

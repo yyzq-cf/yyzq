@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一键脚本 - 运维世界</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .page-header { padding: 120px 0 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .script-section { padding: 60px 0; }
+        .script-full-card { background: var(--bg-white); border-radius: var(--radius); padding: 30px; margin-bottom: 30px; box-shadow: var(--shadow); }
+        .script-full-card h3 { font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .script-full-card .script-code { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; font-family: monospace; overflow-x: auto; margin: 15px 0; }
+        .script-full-card .script-code .comment { color: #6a9955; }
+        .script-full-card .script-code .cmd { color: #569cd6; }
+        .script-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .tag { background: var(--bg-light); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; color: var(--text-light); }
+        .tag.bash { background: #282c34; color: #61afef; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🌧️ 运维世界</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="scripts.html" class="active">脚本</a></li>
+                <li><a href="reviews.html">VPS评测</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>⚡ 一键脚本</h1>
+            <p>自动化安装与配置脚本</p>
+        </div>
+    </header>
+
+    <section class="script-section">
+        <div class="container">
+            <div class="script-full-card">
+                <h3>📦 OpenClaw 一键安装脚本</h3>
+                <p>支持 Linux、Mac、Windows 多平台，一键部署 OpenClaw 中文版</p>
+                <div class="script-code">
+<span class="comment"># Linux/Mac 安装</span>
+<span class="cmd">bash</span> <(curl -Ls https://yyzq.gq/openclaw.sh)
+
+<span class="comment"># 或者</span>
+<span class="cmd">curl -s</span> https://yyzq.gq/openclaw.sh | bash
+                </div>
+                <div class="script-tags">
+                    <span class="tag bash">Bash</span>
+                    <span class="tag">OpenClaw</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="script-full-card">
+                <h3>🐳 Docker 一键部署</h3>
+                <p>常用服务 Docker 一键部署（OpenClaw, Nginx, MySQL, Redis 等）</p>
+                <div class="script-code">
+<span class="comment"># Docker 管理脚本</span>
+<span class="cmd">bash</span> <(curl -Ls https://yyzq.gq/docker.sh)
+
+<span class="comment"># 拉取并运行 OpenClaw</span>
+<span class="cmd">docker</span> run -d --name openclaw \\
+  -p 8080:8080 \\
+  -v ~/openclaw:/data \\
+  openclaw/openclaw:latest
+                </div>
+                <div class="script-tags">
+                    <span class="tag bash">Bash</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="script-full-card">
+                <h3>📊 服务器性能测试</h3>
+                <p>综合跑分、硬盘IO、网络测速、GPU测试</p>
+                <div class="script-code">
+<span class="comment"># 综合性测试（推荐）</span>
+<span class="cmd">bash</span> <(curl -Ls https://yyzq.gq/bench.sh)
+
+<span class="comment"># 简单测速</span>
+<span class="cmd">bash</span> <(curl -Ls https://yyzq.gq/speedtest.sh)
+                </div>
+                <div class="script-tags">
+                    <span class="tag bash">Bash</span>
+                    <span class="tag">Benchmark</span>
+                </div>
+            </div>
+
+            <div class="script-full-card">
+                <h3>🛡️ 服务器安全加固</h3>
+                <p>防火墙配置、SSH加固、Fail2Ban、自动备份</p>
+                <div class="script-code">
+<span class="comment"># 安全加固脚本</span>
+<span class="cmd">bash</span> <(curl -Ls https://yyzq.gq/security.sh)
+                </div>
+                <div class="script-tags">
+                    <span class="tag bash">Bash</span>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
+
+            <div class="script-full-card">
+                <h3>🔄 Aria2 下载服务</h3>
+                <p>Aria2 + AriaNg 一键部署，离线下载利器</p>
+                <div class="script-code">
+<span class="comment"># 安装 Aria2</span>
+<span class="cmd">bash</span> <(curl -Ls https://yyzq.gq/aria2.sh)
+                </div>
+                <div class="script-tags">
+                    <span class="tag bash">Bash</span>
+                    <span class="tag">Download</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2021-2026 运维世界. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
